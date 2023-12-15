@@ -1,4 +1,4 @@
-# github.com/windrnr/dotfiles
+# dotfiles
 
 Mis dotfiles! manejados con [`chezmoi`](https://github.com/twpayne/chezmoi).
 
