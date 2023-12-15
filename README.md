@@ -1,6 +1,6 @@
 # dotfiles
 
-Mis dotfiles! manejados con [`chezmoi`](https://github.com/twpayne/chezmoi).
+Mis dotfiles! Manejados con [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 Instalalos con:
 
