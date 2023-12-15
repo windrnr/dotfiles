@@ -1,1 +1,7 @@
-Acá guardo todas las configuraciones de las herramientas que usé/uso. Utilizo [chezmoi](https://www.chezmoi.io/) para manejarlo y replicarlos en distintas máquinas.
+# github.com/windrnr/dotfiles
+
+Mis dotfiles! manejados con [`chezmoi`](https://github.com/twpayne/chezmoi).
+
+Instalalos con:
+
+    chezmoi init windrnr
