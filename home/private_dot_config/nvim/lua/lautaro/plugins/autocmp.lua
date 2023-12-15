@@ -36,9 +36,9 @@ return {
 				capabilities = capabilities,
 			})
 
-			require("lspconfig")["html"].setup({
-				capabilities = capabilities,
-			})
+			-- require("lspconfig")["html"].setup({
+			-- 	capabilities = capabilities,
+			-- })
 
 			require("lspconfig")["asm_lsp"].setup({
 				capabilities = capabilities,
@@ -48,13 +48,10 @@ return {
 				capabilities = capabilities,
 			})
 
-			require("lspconfig")["ocamllsp"].setup({
-				capabilities = capabilities,
-			})
-
-			-- require("lspconfig")["jdtls"].setup({
+			-- require("lspconfig")["ocamllsp"].setup({
 			-- 	capabilities = capabilities,
 			-- })
+
 		end,
 	},
 
