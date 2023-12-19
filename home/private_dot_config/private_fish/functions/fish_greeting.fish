@@ -44,4 +44,9 @@ function fish_greeting
     printf "\t"
     bash -c "ip -6 -brief -o addres show | grep   wlp2s0f0u6"
     printf "\n"
+
+    printf $BOLD_O
+    printf " Tasks: \n\t"
+    printf $BOLD_C
+    bash -c "codex print"
 end
