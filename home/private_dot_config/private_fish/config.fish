@@ -17,3 +17,4 @@ end
 
 pyenv init - | source
 theme_gruvbox dark medium
+source /opt/asdf-vm/asdf.fish

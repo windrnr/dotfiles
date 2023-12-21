@@ -46,7 +46,7 @@ function fish_greeting
     printf "\n"
 
     printf $BOLD_O
-    printf " Tasks: \n\t"
+    printf " Tasks: \n"
     printf $BOLD_C
-    bash -c "codex print"
+    bash -c "cmo list"
 end

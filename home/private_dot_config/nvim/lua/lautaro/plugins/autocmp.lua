@@ -32,14 +32,6 @@ return {
 				capabilities = capabilities,
 			})
 
-			require("lspconfig")["tailwindcss"].setup({
-				capabilities = capabilities,
-			})
-
-			-- require("lspconfig")["html"].setup({
-			-- 	capabilities = capabilities,
-			-- })
-
 			require("lspconfig")["asm_lsp"].setup({
 				capabilities = capabilities,
 			})
@@ -47,10 +39,6 @@ return {
 			require("lspconfig")["zls"].setup({
 				capabilities = capabilities,
 			})
-
-			-- require("lspconfig")["ocamllsp"].setup({
-			-- 	capabilities = capabilities,
-			-- })
 
 		end,
 	},
