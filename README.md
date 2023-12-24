@@ -1,7 +1,17 @@
 # dotfiles
 
-Mis dotfiles! Manejados con [`chezmoi`](https://github.com/twpayne/chezmoi).
+![Screenshot](/images/readme.jpeg)
 
-Instalalos con:
+Mis dotfiles:
+- Fish
+- Alacritty
+- Neovim
+- Polybar
+- i3
+- tmux
+
+
+Manejado con [`chezmoi`](https://github.com/twpayne/chezmoi).
+Descargalo con:
 
     chezmoi init windrnr

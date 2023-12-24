@@ -33,16 +33,17 @@ function fish_greeting
     printf $BOLD_C
 
     printf "\n\n\t"
-    bash -c "df -lH --output=file,used,size,pcent /dev/sda3 | tail -n+2"
+    bash -c "df -lH --output=file,used,size,pcent /dev/sda2 | tail -n+2"
     printf "\n"
 
     printf $BOLD_O
     printf " Network: \n\t"
     printf $BOLD_C
 
-    bash -c "ip -4 -brief -o addres show | grep  wlp2s0f0u6"
+    bash -c "ip -4 -brief -o addres show | grep  wlx1caff768f339"
     printf "\t"
-    bash -c "ip -6 -brief -o addres show | grep   wlp2s0f0u6"
+    bash -c "ip -6 -brief -o addres show | grep  wlx1caff768f339"
+    printf "\t"
     printf "\n"
 
     printf $BOLD_O

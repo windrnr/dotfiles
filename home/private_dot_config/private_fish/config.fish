@@ -15,6 +15,7 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-pyenv init - | source
+# pyenv init - | source
 theme_gruvbox dark medium
-source /opt/asdf-vm/asdf.fish
+# source /opt/asdf-vm/asdf.fish 
+

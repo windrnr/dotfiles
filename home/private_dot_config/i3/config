@@ -155,7 +155,7 @@ bindsym $mod+r mode "resize"
 # CUSTOM KEYS START
 # ---------------------------------------------
 
-exec_always feh --bg-fill $HOME/.local/share/images/Untitled.png
+exec_always feh --bg-fill $HOME/.local/share/chezmoi/images/Untitled.png
 exec_always --no-startup-id /home/lautaro/.config/polybar/launch.sh
 
 bindsym $mod+d exec "rofi -show drun"
