@@ -38,4 +38,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/lautaro/personal/nvim\x2dlinux64/bin/\x1e/home/lautaro/personal/zig\x2dlinux\x2dx86_64\x2d0\x2e12\x2e0\x2ddev\x2e1769\x2bbf5ab5451/\x1e/home/lautaro/jetBrains/bin\x1e/home/lautaro/Zig/\x1e/home/lautaro/Downloads/bin/\x1e/home/lautaro/\x2epyenv/bin\x1e/home/lautaro/\x2elocal/bin/\x1e/home/lautaro/personal/nvim\x1e/home/lautaro/\x2efzf/bin
+SETUVAR fish_user_paths:/home/lautaro/personal/node\x2dv20\x2e10\x2e0\x2dlinux\x2dx64/bin/\x1e/usr/local/go/bin/\x1e/home/lautaro/personal/nvim\x2dlinux64/bin/\x1e/home/lautaro/personal/zig\x2dlinux\x2dx86_64\x2d0\x2e12\x2e0\x2ddev\x2e1769\x2bbf5ab5451/\x1e/home/lautaro/jetBrains/bin\x1e/home/lautaro/Zig/\x1e/home/lautaro/Downloads/bin/\x1e/home/lautaro/\x2epyenv/bin\x1e/home/lautaro/\x2elocal/bin/\x1e/home/lautaro/personal/nvim\x1e/home/lautaro/\x2efzf/bin

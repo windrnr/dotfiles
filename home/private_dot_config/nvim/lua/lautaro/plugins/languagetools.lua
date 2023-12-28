@@ -8,11 +8,9 @@ return {
 	-- },
 
 	{
-		"cdelledonne/vim-cmake",
 		"airblade/vim-rooter",
 	},
-
-	{
+    {
 		"roobert/tailwindcss-colorizer-cmp.nvim",
 		config = function()
 			require("tailwindcss-colorizer-cmp").setup({
