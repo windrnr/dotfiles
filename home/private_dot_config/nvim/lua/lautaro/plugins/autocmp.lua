@@ -40,6 +40,10 @@ return {
 				capabilities = capabilities,
 			})
 
+            require("lspconfig")["tailwindcss"].setup({
+				capabilities = capabilities,
+			})
+
 		end,
 	},
 
