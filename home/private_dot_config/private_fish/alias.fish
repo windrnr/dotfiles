@@ -1,4 +1,5 @@
 alias ls='exa'
+alias vim='nvim'
 alias lsf='exa -la'
 alias gs='git status'
 alias ga='git add'

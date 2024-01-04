@@ -21,3 +21,5 @@ set.termguicolors = true
 set.wrap = false
 vim.o.completeopt = vim.o.completeopt:gsub(",?preview", "")
 -- :autocmd OptionSet guicursor noautocmd set guicursor=
+--
+--require('lspconfig/quick_lint_js').setup {}
