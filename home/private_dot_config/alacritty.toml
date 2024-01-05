@@ -1,0 +1,22 @@
+[font]
+size = 11.0
+
+[font.bold]
+family = "Iosevka"
+style = "bold"
+
+[font.bold_italic]
+family = "Iosevka"
+style = "bolditalic"
+
+[font.italic]
+family = "Iosevka"
+style = "italic"
+
+[font.normal]
+family = "Iosevka"
+style = "Term"
+
+[window.padding]
+x = 12
+y = 12
