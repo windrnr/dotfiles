@@ -1,179 +1,172 @@
 return {
-    --{
-    --    "utilyre/barbecue.nvim",
-    --    name = "barbecue",
-    --    version = "*",
-    --    dependencies = {
-    --        "SmiteshP/nvim-navic"
-    --    },
-    --    opts = {
-    --        ---Whether to attach navic to language servers automatically.
-    --        ---@type boolean
-    --        attach_navic = true,
-    --        ---Whether to create winbar updater autocmd.
-    --        ---@type boolean
-    --        create_autocmd = true,
-    --        ---Buftypes to enable winbar in.
-    --        ---@type string[]
-    --        include_buftypes = { "" },
-    --        ---Filetypes not to enable winbar in.
-    --        ---@type string[]
-    --        exclude_filetypes = { "netrw", "toggleterm" },
-    --        modifiers = {
-    --            ---Filename modifiers applied to dirname.
-    --            ---See: `:help filename-modifiers`
-    --            ---@type string
-    --            dirname = ":~:.",
-    --            ---Filename modifiers applied to basename.
-    --            ---See: `:help filename-modifiers`
-    --            ---@type string
-    --            basename = "",
-    --        },
-    --        ---Whether to display path to file.
-    --        ---@type boolean
-    --        show_dirname = true,
-    --        ---Whether to display file name.
-    --        ---@type boolean
-    --        show_basename = true,
-    --        ---Whether to replace file icon with the modified symbol when buffer is modified.
-    --        ---@type boolean
-    --        show_modified = true,
-    --        ---Get modified status of file.
-    --        ---NOTE: This can be used to get file modified status from SCM (e.g. git)
-    --        ---@type fun(bufnr: number): boolean
-    --        modified = function(bufnr) return vim.bo[bufnr].modified end,
-    --        ---Whether to show/use navic in the winbar.
-    --        ---@type boolean
-    --        show_navic = true,
-    --        ---Get leading custom section contents.
-    --        ---NOTE: This function shouldn't do any expensive actions as it is run on each
-    --        ---@type fun(bufnr: number, winnr: number): barbecue.Config.custom_section
-    --        lead_custom_section = function() return " " end,
-    --        ---@alias barbecue.Config.custom_section
-    --        ---|string # Literal string.
-    --        ---|{ [1]: string, [2]: string? }[] # List-like table of `[text, highlight?]` tuples in which `highlight` is optional.
-    --        ---Get custom section contents.
-    --        ---NOTE: This function shouldn't do any expensive actions as it is run on each
-    --        ---render.
-    --        ---@type fun(bufnr: number, winnr: number): barbecue.Config.custom_section
-    --        custom_section = function() return " " end,
-    --        ---@alias barbecue.Config.theme
-    --        ---|'"auto"' # Use your current colorscheme's theme or generate a theme based on it.
-    --        ---|string # Theme located under `barbecue.theme` module.
-    --        ---|barbecue.Theme # Same as '"auto"' but override it with the given table.
-    --        ---Theme to be used for generating highlight groups dynamically.
-    --        ---@type barbecue.Config.theme
-    --        theme = "auto",
-    --        ---Whether context text should follow its icon's color.
-    --        ---@type boolean
-    --        context_follow_icon_color = false,
-    --        symbols = {
-    --            ---Modification indicator.
-    --            ---@type string
-    --            modified = "●",
-    --            ---Truncation indicator.
-    --            ---@type string
-    --            ellipsis = "…",
-    --            ---Entry separator.
-    --            ---@type string
-    --            separator = "", --
-    --        },
 
-    --        ---@alias barbecue.Config.kinds
-    --        ---|false # Disable kind icons.
-    --        ---|table<string, string> # Type to icon mapping.
-    --        ---Icons for different context entry kinds.
-    --        ---@type barbecue.Config.kinds
-    --        kinds = {
-    --            File          = "",
-    --            Module        = "",
-    --            Namespace     = "",
-    --            Package       = "",
-    --            Class         = "",
-    --            Method        = "",
-    --            Property      = "",
-    --            Field         = "",
-    --            Constructor   = "",
-    --            Enum          = "練",
-    --            Interface     = "練",
-    --            Function      = "",
-    --            Variable      = "",
-    --            Constant      = "",
-    --            String        = "",
-    --            Number        = "",
-    --            Boolean       = "◩",
-    --            Array         = "",
-    --            Object        = "",
-    --            Key           = "",
-    --            Null          = "ﳠ",
-    --            EnumMember    = "",
-    --            Struct        = "",
-    --            Event         = "",
-    --            Operator      = "",
-    --            TypeParameter = "",
-    --        }
-    --    }
-    --},
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            local lualine = require('lualine')
 
-    -- {
-    --     "nvim-lualine/lualine.nvim",
-    --     config = function ()
-    --         -- local navic = require("nvim-navic")
-    --         require('lualine').setup {
-    --             options = {
-    --                 icons_enabled = true,
-    --                 theme = 'auto',
-    --                 component_separators = { left = '', right = '|'},
-    --                 section_separators = { left = '', right = ''},
-    --                 disabled_filetypes = {
-    --                     statusline = {},
-    --                     winbar = {},
-    --                 },
-    --                 ignore_focus = {},
-    --                 always_divide_middle = true,
-    --                 globalstatus = false,
-    --                 refresh = {
-    --                     statusline = 1000,
-    --                     tabline = 1000,
-    --                     winbar = 1000,
-    --                 }
-    --             },
-    --             sections = {
-    --                 lualine_a = {'mode'},
-    --                 lualine_b = {'branch', 'diff'},
-    --                 lualine_c = {},
+            local colors = {
+                bg       = '#202328',
+                fg       = '#bbc2cf',
+                yellow   = '#fabd2f',
+                cyan     = '#008080',
+                darkblue = '#081633',
+                green    = '#98be65',
+                orange   = '#FF8800',
+                violet   = '#a9a1e1',
+                magenta  = '#c678dd',
+                blue     = '#6CB4EE',
+                red      = '#ec5f67',
+                white    = '#ffffff',
+            }
+
+            local conditions = {
+                buffer_not_empty = function()
+                    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+                end,
+                hide_in_width = function()
+                    return vim.fn.winwidth(0) > 80
+                end,
+                check_git_workspace = function()
+                    local filepath = vim.fn.expand('%:p:h')
+                    local gitdir = vim.fn.finddir('.git', filepath .. ';')
+                    return gitdir and #gitdir > 0 and #gitdir < #filepath
+                end,
+            }
+
+            local config = {
+                options = {
+                    component_separators = '',
+                    section_separators = '',
+                    theme = {
+                        normal = { c = { fg = colors.fg, bg = colors.bg } },
+                        inactive = { c = { fg = colors.fg, bg = colors.bg } },
+                    },
+                },
+                sections = {
+                    lualine_a = {},
+                    lualine_b = {},
+                    lualine_y = {},
+                    lualine_z = {},
+                    lualine_c = {},
+                    lualine_x = {},
+                },
+                inactive_sections = {
+                    lualine_a = {},
+                    lualine_b = {},
+                    lualine_y = {},
+                    lualine_z = {},
+                    lualine_c = {},
+                    lualine_x = {},
+                },
+            }
+
+            local function ins_left(component)
+                table.insert(config.sections.lualine_c, component)
+            end
+
+            local function ins_right(component)
+                table.insert(config.sections.lualine_x, component)
+            end
+
+            local mode_colors = function()
+                local mode_color = {
+                    n = colors.blue,
+                    i = colors.green,
+                    v = colors.magenta,
+                    [''] = colors.blue,
+                    V = colors.blue,
+                    c = colors.magenta,
+                    no = colors.red,
+                    s = colors.orange,
+                    S = colors.orange,
+                    [''] = colors.orange,
+                    ic = colors.yellow,
+                    R = colors.violet,
+                    Rv = colors.violet,
+                    cv = colors.red,
+                    ce = colors.red,
+                    r = colors.cyan,
+                    rm = colors.cyan,
+                    ['r?'] = colors.cyan,
+                    ['!'] = colors.red,
+                    t = colors.red,
+                }
+
+                return mode_color[vim.fn.mode()]
+            end
+
+            ins_left {
+                function()
+                    -- return '●'
+                    -- return '⨁'
+                    return '⬤'
+                end,
+                color = function()
+                    return { fg = mode_colors() }
+                end,
+                padding = { right = 1,
+                    left = 1 },
+            }
+
+            ins_left {
+                'filename',
+                cond = conditions.buffer_not_empty,
+                color = { fg = colors.white, gui = 'bold' },
+            }
+
+            ins_left {
+                "location"
+            }
+
+            ins_right {
+                function()
+                    local msg = 'No Active Lsp'
+                    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+                    local clients = vim.lsp.get_active_clients()
+                    if next(clients) == nil then
+                        return msg
+                    end
+                    for _, client in ipairs(clients) do
+                        local filetypes = client.config.filetypes
+                        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                            return client.name
+                        end
+                    end
+                    return msg
+                end,
+                -- icon = 'LSP:',
+                color = { fg = colors.white, gui = 'bold' },
+            }
 
 
-    --                 lualine_x = {{'lsp_progress', display_components = {'lsp_client_name'}},'diagnostics','filetype'},
-    --                 lualine_y = {'progress'},
-    --                 lualine_z = {'location'}
-    --             },
-    --             inactive_sections = {
-    --                 lualine_a = {},
-    --                 lualine_b = {},
-    --                 lualine_c = {'filename'},
-    --                 lualine_x = {'location'},
-    --                 lualine_y = {},
-    --                 lualine_z = {}
-    --             },
-    --             winbar = {
-    --                 -- lualine_c = {{'filetype', icon_only = true}, {'filename', path = 0},
-    --                 -- {
-    --                 --     function ()
-    --                 --         return navic.get_location();
-    --                 --     end
-    --                 -- },
-    --             -- },
-    --                 -- lualine_b = {},
-    --                 -- lualine_a = {},
-    --                 -- lualine_x = {},
-    --                 -- lualine_y = {},
-    --                 -- lualine_z = {}
-    --             },
+            ins_right {
+                'fileformat',
+                fmt = string.upper,
+                icons_enabled = false,
+                color = { fg = colors.yellow, gui = 'bold' },
+            }
 
-    --             inactive_winbar = {},
-    --             extensions = {}
-    --         }
-    --     end
-    -- }
+            ins_right {
+                'branch',
+                icon = "⤷",
+                color = { fg = colors.orange, gui = 'bold' },
+            }
+
+            ins_right {
+                function()
+                    return '▊'
+                end,
+                color = function()
+                    return { fg = mode_colors() }
+                end,
+                padding = {
+                    left = 1 },
+            }
+
+            -- Now don't forget to initialize lualine
+            lualine.setup(config)
+        end
+    }
 }
