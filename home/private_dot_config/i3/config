@@ -11,16 +11,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 # exec --no-startup-id compton
 
-
 floating_modifier $mod
 bindsym $mod+Shift+q kill
-
 
 for_window [class="^.*"] border pixel 2
 # class                 border  backgr. text    indicator child_border
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
-
-
 
 # change focus
 bindsym $mod+j focus left
@@ -74,9 +70,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 1:firefox
+set $ws2 2:code
+set $ws3 3:spotify
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -160,7 +156,7 @@ exec_always --no-startup-id /home/lautaro/.config/polybar/launch.sh
 
 bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+s exec flameshot gui --clipboard
-bindsym $mod+p exec systemctl suspend
+bindsym $mod+p exec i3lock-fancy
 bindsym $mod+Return exec alacritty
 
 

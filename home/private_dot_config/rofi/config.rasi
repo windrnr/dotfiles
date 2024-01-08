@@ -8,74 +8,72 @@ configuration {
 
 @theme "/dev/null"
 
-* {
-  bg: #282828;
-  // bg: #11121D;
-  bg-alt: #504945;
-  // bg-alt: #444b6a;
 
-  fg: #b8bb26;
-  // fg: #FFFFFF;
-  fg-alt: #ebdbb2;
+ * {
+   bg: #000000;
+   bg-alt: #1d2021;
 
-  background-color: @bg;
-  
-  border: 0;
-  margin: 0;
-  padding: 2px;
-  spacing: 0;
-}
+   fg: #fabd2f;
+   fg-alt: #FFFFFF;
 
-window {
-  width: 30%;
-}
+   background-color: @bg;
 
-element {
-  padding: 8 0;
-  text-color: @fg-alt;
-}
+   border: 0;
+   margin: 0;
+   padding: 2px;
+   spacing: 0;
+ }
 
-element selected {
-  text-color: @fg;
-}
+ window {
+   width: 30%;
+ }
 
-element-text {
-  text-color: inherit;
-  vertical-align: 0.5;
-}
+ element {
+   padding: 8 0;
+   text-color: @fg-alt;
+ }
 
-element-icon {
-  size: 14;
-  padding: 0 10 0 0;
-}
+ element selected {
+   text-color: @fg;
+ }
 
-entry {
-  background-color: @bg-alt;
-  padding: 12;
-  text-color: @fg;
-}
+ element-text {
+   text-color: inherit;
+   vertical-align: 0.5;
+ }
 
-inputbar {
-  children: [prompt, entry];
-}
+ element-icon {
+   size: 14;
+   padding: 0 10 0 0;
+ }
 
-listview {
-  padding: 8 12;
-  background-color: @bg;
-  columns: 1;
-  lines: 10;
-}
+ entry {
+   background-color: @bg-alt;
+   padding: 12;
+   text-color: @fg-alt;
+ }
 
-mainbox {
-  background-color: @bg;
-  children: [inputbar, listview];
-}
+ inputbar {
+   children: [prompt, entry];
+ }
 
-prompt {
-  background-color: @bg-alt;
-  enabled: true;
-  padding: 12 0 0 12;
-  text-color: @fg;
-}
+ listview {
+   padding: 8 12;
+   background-color: @bg;
+   columns: 1;
+   lines: 10;
+ }
 
-/* vim: ft=sass
+ mainbox {
+   background-color: @bg;
+   children: [inputbar, listview];
+ }
+
+ prompt {
+   background-color: @bg-alt;
+   enabled: true;
+   padding: 12 0 0 12;
+   text-color: @fg;
+ }
+
+ //vim: ft=sass

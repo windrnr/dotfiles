@@ -10,6 +10,7 @@
   "git-blame.nvim": { "branch": "master", "commit": "f07e913b7143f19edd6787229f2d51759b478600" },
   "gruvbox": { "branch": "main", "commit": "4176b0b720db0c90ab4030e5c1b4893faf41fd51" },
   "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
+  "kanagawa": { "branch": "master", "commit": "c19b9023842697ec92caf72cd3599f7dd7be4456" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lualine.nvim": { "branch": "master", "commit": "566b7036f717f3d676362742630518a47f132fff" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "0989bdf4fdf7b5aa4c74131d7ffccc3f399ac788" },
